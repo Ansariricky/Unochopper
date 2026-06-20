@@ -50,7 +50,7 @@
         "silk_text_thickness": 0.1,
         "silk_text_upright": false,
         "zones": {
-          "min_clearance": 0.5
+          "min_clearance": 0.2
         }
       },
       "diff_pair_dimensions": [
@@ -196,7 +196,8 @@
       "track_widths": [
         0.0,
         0.25,
-        0.3
+        0.3,
+        0.5
       ],
       "tuning_pattern_settings": {
         "diff_pair_defaults": {
@@ -493,8 +494,7 @@
   "net_settings": {
     "classes": [
       {
-        "bus_width": 12,
-        "clearance": 0.2,
+        "clearance": 0.15,
         "diff_pair_gap": 0.25,
         "diff_pair_via_gap": 0.25,
         "diff_pair_width": 0.2,
@@ -505,7 +505,7 @@
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "priority": 2147483647,
         "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "track_width": 0.2,
+        "track_width": 0.15,
         "tuning_profile": "",
         "via_diameter": 0.6,
         "via_drill": 0.3,
@@ -514,20 +514,11 @@
       {
         "name": "Power",
         "pcb_color": "rgba(0, 0, 0, 0.000)",
-        "priority": 1,
-        "schematic_color": "rgb(255, 69, 3)",
+        "priority": 0,
+        "schematic_color": "rgb(255, 86, 3)",
         "track_width": 0.3,
         "tuning_profile": "",
         "wire_width": 12
-      },
-      {
-        "name": "Signals",
-        "pcb_color": "rgba(0, 0, 0, 0.000)",
-        "priority": 0,
-        "schematic_color": "rgb(1, 146, 255)",
-        "track_width": 0.25,
-        "tuning_profile": "",
-        "wire_width": 8
       }
     ],
     "meta": {
@@ -538,11 +529,7 @@
     "netclass_patterns": [
       {
         "netclass": "Power",
-        "pattern": "^(\\+3\\.3V.*|\\+5V.*|VBAT.*|GND*)$"
-      },
-      {
-        "netclass": "Signals",
-        "pattern": "^(SPI|I2C|UART|USART|TX|RX|CAN|SW|TIM|BARO|IMU).*"
+        "pattern": ".*(VCAP|\\+3\\.3V|\\+3\\.3VA|VBAT|GND).*"
       }
     ]
   },
@@ -700,7 +687,7 @@
     ],
     [
       "2137e8e5-d2c1-4374-b002-a53a5a270796",
-      "Storage"
+      "Flash"
     ]
   ],
   "text_variables": {},
